@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>技术修炼 · 云栈小筑</title>
+<style>
+:root{
+  --primary:#2563eb; --primary-dark:#1e40af;
+  --bg:#f1f5f9; --card:#ffffff; --text:#0f172a; --muted:#64748b;
+  --shadow:0 10px 30px rgba(30,64,175,.10);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;background:#f6f8fb;color:var(--text);line-height:1.75;-webkit-font-smoothing:antialiased;}
+a{text-decoration:none;color:inherit;}
+nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.9);backdrop-filter:blur(14px);border-bottom:1px solid #e8edf4;}
+.nav-inner{max-width:1080px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:15px 24px;}
+.logo{font-size:1.22rem;font-weight:800;color:var(--primary);display:flex;align-items:center;gap:9px;letter-spacing:.5px;}
+.logo .dot{width:10px;height:10px;border-radius:3px;background:linear-gradient(135deg,#38bdf8,#2563eb);box-shadow:0 0 0 4px #eff6ff;}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap;}
+.nav-links a{padding:8px 18px;border-radius:10px;font-size:.93rem;color:var(--muted);transition:.25s;font-weight:500;}
+.nav-links a:hover{color:var(--primary);background:#eff6ff;}
+.nav-links a.active{color:#fff;background:linear-gradient(135deg,#2563eb,#1d4ed8);box-shadow:0 4px 12px rgba(37,99,235,.3);}
+
+.page-head{background:linear-gradient(135deg,#1e3a8a,#2563eb 60%,#38bdf8);color:#fff;text-align:center;padding:70px 24px 60px;}
+.page-head h1{font-size:2.2rem;font-weight:900;}
+.page-head p{color:#dbeafe;margin-top:10px;}
+
+.section{max-width:1080px;margin:0 auto;padding:60px 24px;}
+.filter{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:36px;}
+.filter button{padding:8px 22px;border:1.5px solid #cbd5e1;background:#fff;border-radius:999px;cursor:pointer;font-size:.92rem;color:var(--muted);transition:.25s;font-family:inherit;}
+.filter button:hover{border-color:var(--primary);color:var(--primary);}
+.filter button.on{background:var(--primary);border-color:var(--primary);color:#fff;}
+
+.posts{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;}
+.post{background:var(--card);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);transition:.3s;display:flex;flex-direction:column;}
+.post:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(30,64,175,.18);}
+.post .cover{height:140px;overflow:hidden;}
+.post .cover img{width:100%;height:100%;object-fit:cover;display:block;transition:.4s;}
+.post:hover .cover img{transform:scale(1.06);}
+.post .body{padding:22px 24px 24px;flex:1;display:flex;flex-direction:column;}
+.post .meta{display:flex;gap:10px;font-size:.8rem;color:var(--muted);margin-bottom:8px;}
+.tag{background:#eff6ff;color:var(--primary);padding:2px 10px;border-radius:99px;font-weight:600;}
+.post h3{font-size:1.1rem;margin-bottom:8px;}
+.post p{color:var(--muted);font-size:.92rem;flex:1;}
+.post .date{margin-top:14px;font-size:.82rem;color:#94a3b8;}
+
+footer{background:#0b1220;color:#94a3b8;text-align:center;padding:40px 20px;font-size:.9rem;margin-top:60px;border-top:3px solid transparent;border-image:linear-gradient(90deg,#2563eb,#38bdf8) 1;}
+footer .heart{color:#f87171;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="logo"><span class="dot"></span>云栈小筑</div>
+    <div class="nav-links">
+      <a href="index.html">首页</a>
+      <a href="study.html" class="active">技术修炼</a>
+      <a href="tech.html">技术栈</a>
+      <a href="about.html">个人介绍</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-head">
+  <h1>📚 技术修炼</h1>
+  <p>每一篇文章，都是一次打怪升级</p>
+</header>
+
+<section class="section">
+  <div class="filter">
+    <button class="on" onclick="show('all',this)">全部</button>
+    <button onclick="show('cloud',this)">☁️ 云计算</button>
+    <button onclick="show('net',this)">🌐 网络</button>
+    <button onclick="show('code',this)">💻 编程</button>
+  </div>
+
+  <div class="posts">
+    <article class="post cloud" data-cat="cloud">
+      <div class="cover"><img src="images/cloud.png" alt="云计算"></div>
+      <div class="body">
+        <div class="meta"><span class="tag">云计算</span><span>基础篇</span></div>
+        <h3>云计算入门：IaaS、PaaS、SaaS 到底差在哪？</h3>
+        <p>用「自己盖房、租毛坯、住酒店」的比喻讲清三种云服务模型，附学习路线图。</p>
+        <div class="date">📅 2026-10-20 · 阅读 5 min</div>
+      </div>
+    </article>
+    <article class="post cloud" data-cat="cloud">
+      <div class="cover"><img src="images/cloud.png" alt="Docker 容器"></div>
+      <div class="body">
+        <div class="meta"><span class="tag">云计算</span><span>容器篇</span></div>
+        <h3>Docker 第一次上手：把我的网站装进容器</h3>
+        <p>镜像、容器、仓库三件套速通，记录第一次 docker run 踩过的坑。</p>
+        <div class="date">📅 2026-10-24 · 阅读 8 min</div>
+      </div>
+    </article>
+    <article class="post net" data-cat="net">
+      <div class="cover"><img src="images/ensp.png" alt="eNSP 网络拓扑"></div>
+      <div class="body">
+        <div class="meta"><span class="tag">网络</span><span>eNSP</span></div>
+        <h3>eNSP 实验：用 VLAN 隔离两个部门的流量</h3>
+        <p>从拓扑搭建、VLAN 划分到 Trunk 配置，一步步截图记录实验全过程。</p>
+        <div class="date">📅 2026-10-26 · 阅读 10 min</div>
+      </div>
+    </article>
+    <article class="post net" data-cat="net">
+      <div class="cover"><img src="images/ensp.png" alt="路由实验"></div>
+      <div class="body">
+        <div class="meta"><span class="tag">网络</span><span>路由篇</span></div>
+        <h3>静态路由 vs OSPF：小网络该用哪个？</h3>
+        <p>在 eNSP 里同时配两种方案做对比，理解路由表的生成逻辑。</p>
+        <div class="date">📅 2026-10-27 · 阅读 7 min</div>
+      </div>
+    </article>
+    <article class="post code" data-cat="code">
+      <div class="cover"><img src="images/cpp.png" alt="C++"></div>
+      <div class="body">
+        <div class="meta"><span class="tag">编程</span><span>C++</span></div>
+        <h3>重拾 C++：指针这段孽缘终于理清了</h3>
+        <p>用画图的方式理解指针与内存，配 5 道入门小练习。</p>
+        <div class="date">📅 2026-10-18 · 阅读 6 min</div>
+      </div>
+    </article>
+    <article class="post code" data-cat="code">
+      <div class="cover"><img src="images/python.png" alt="Python 前端建站"></div>
+      <div class="body">
+        <div class="meta"><span class="tag">前端</span><span>建站</span></div>
+        <h3>零框架搭建个人博客：本站的诞生记</h3>
+        <p>为什么选纯静态 HTML？从设计稿到上线，一个页面一个页面手搓的记录。</p>
+        <div class="date">📅 2026-10-28 · 阅读 9 min</div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 云栈小筑 · 用 <span class="heart">♥</span> 和纯静态 HTML 打造</p>
+</footer>
+
+<script>
+function show(cat,btn){
+  document.querySelectorAll('.filter button').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  document.querySelectorAll('.post').forEach(p=>{
+    p.style.display=(cat==='all'||p.dataset.cat===cat)?'flex':'none';
+  });
+}
+</script>
+</body>
+</html>

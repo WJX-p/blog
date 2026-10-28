@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>技术栈 · 云栈小筑</title>
+<style>
+:root{
+  --primary:#2563eb; --primary-dark:#1e40af;
+  --bg:#f1f5f9; --card:#ffffff; --text:#0f172a; --muted:#64748b;
+  --shadow:0 10px 30px rgba(30,64,175,.10);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;background:#f6f8fb;color:var(--text);line-height:1.75;-webkit-font-smoothing:antialiased;}
+a{text-decoration:none;color:inherit;}
+nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.9);backdrop-filter:blur(14px);border-bottom:1px solid #e8edf4;}
+.nav-inner{max-width:1080px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:15px 24px;}
+.logo{font-size:1.22rem;font-weight:800;color:var(--primary);display:flex;align-items:center;gap:9px;letter-spacing:.5px;}
+.logo .dot{width:10px;height:10px;border-radius:3px;background:linear-gradient(135deg,#38bdf8,#2563eb);box-shadow:0 0 0 4px #eff6ff;}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap;}
+.nav-links a{padding:8px 18px;border-radius:10px;font-size:.93rem;color:var(--muted);transition:.25s;font-weight:500;}
+.nav-links a:hover{color:var(--primary);background:#eff6ff;}
+.nav-links a.active{color:#fff;background:linear-gradient(135deg,#2563eb,#1d4ed8);box-shadow:0 4px 12px rgba(37,99,235,.3);}
+
+.page-head{background:linear-gradient(135deg,#1e3a8a,#2563eb 60%,#38bdf8);color:#fff;text-align:center;padding:70px 24px 60px;}
+.page-head h1{font-size:2.2rem;font-weight:900;}
+.page-head p{color:#dbeafe;margin-top:10px;}
+
+.section{max-width:1080px;margin:0 auto;padding:60px 24px;}
+.section-title{text-align:center;margin-bottom:40px;}
+.section-title h2{font-size:1.7rem;font-weight:800;}
+.section-title h2 em{font-style:normal;color:var(--primary);}
+.section-title p{color:var(--muted);margin-top:6px;}
+
+.legend{display:flex;gap:18px;justify-content:center;margin-bottom:36px;flex-wrap:wrap;font-size:.9rem;}
+.legend span{display:flex;align-items:center;gap:6px;color:var(--muted);}
+.lvl{width:14px;height:14px;border-radius:4px;display:inline-block;}
+.l1{background:#22c55e;} .l2{background:#38bdf8;} .l3{background:#f59e0b;}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(480px,1fr));gap:26px;}
+@media(max-width:1080px){.grid{grid-template-columns:1fr;}}
+.panel{background:var(--card);border-radius:18px;padding:32px;box-shadow:var(--shadow);border-top:4px solid var(--primary);}
+.panel h3{font-size:1.2rem;margin-bottom:20px;display:flex;align-items:center;gap:10px;}
+.skill{margin-bottom:20px;}
+.skill .row{display:flex;justify-content:space-between;margin-bottom:7px;font-size:.95rem;font-weight:600;}
+.skill .row .lvl-tag{font-size:.78rem;padding:1px 10px;border-radius:99px;color:#fff;}
+.track{height:10px;background:#e2e8f0;border-radius:99px;overflow:hidden;}
+.fill{height:100%;border-radius:99px;width:0;animation:grow 1.3s ease forwards;}
+@keyframes grow{to{width:var(--w);}}
+.f-green{background:linear-gradient(90deg,#4ade80,#22c55e);}
+.f-blue{background:linear-gradient(90deg,#38bdf8,#0ea5e9);}
+.f-amber{background:linear-gradient(90deg,#fbbf24,#f59e0b);}
+.t-green{background:#22c55e;} .t-blue{background:#0ea5e9;} .t-amber{background:#f59e0b;}
+
+.note{max-width:1080px;margin:0 auto 60px;background:#eff6ff;border-left:5px solid var(--primary);border-radius:0 14px 14px 0;padding:22px 28px;color:#1e40af;font-size:.95rem;}
+
+footer{background:#0b1220;color:#94a3b8;text-align:center;padding:40px 20px;font-size:.9rem;margin-top:20px;border-top:3px solid transparent;border-image:linear-gradient(90deg,#2563eb,#38bdf8) 1;}
+footer .heart{color:#f87171;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="logo"><span class="dot"></span>云栈小筑</div>
+    <div class="nav-links">
+      <a href="index.html">首页</a>
+      <a href="study.html">技术修炼</a>
+      <a href="tech.html" class="active">技术栈</a>
+      <a href="about.html">个人介绍</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-head">
+  <h1>🧰 我的技能树</h1>
+  <p>熟练 &gt; 掌握 &gt; 了解 · 持续点亮中</p>
+</header>
+
+<section class="section">
+  <div class="legend">
+    <span><i class="lvl l1"></i>熟练 · 能独立完成项目</span>
+    <span><i class="lvl l2"></i>掌握 · 能完成常规任务</span>
+    <span><i class="lvl l3"></i>了解 · 有基础概念与实践</span>
+  </div>
+
+  <div class="grid">
+    <div class="panel">
+      <h3>☁️ 云与运维（主修方向）</h3>
+      <div class="skill"><div class="row"><span>云计算基础 / 云平台</span><span class="lvl-tag t-blue">掌握</span></div><div class="track"><div class="fill f-blue" style="--w:75%"></div></div></div>
+      <div class="skill"><div class="row"><span>Linux 基础 / Shell</span><span class="lvl-tag t-blue">掌握</span></div><div class="track"><div class="fill f-blue" style="--w:65%"></div></div></div>
+      <div class="skill"><div class="row"><span>虚拟化 / Docker</span><span class="lvl-tag t-amber">了解</span></div><div class="track"><div class="fill f-amber" style="--w:45%"></div></div></div>
+    </div>
+
+    <div class="panel">
+      <h3>🌐 网络技术</h3>
+      <div class="skill"><div class="row"><span>华为 eNSP / 路由交换</span><span class="lvl-tag t-blue">掌握</span></div><div class="track"><div class="fill f-blue" style="--w:70%"></div></div></div>
+      <div class="skill"><div class="row"><span>TCP/IP 协议基础</span><span class="lvl-tag t-blue">掌握</span></div><div class="track"><div class="fill f-blue" style="--w:65%"></div></div></div>
+      <div class="skill"><div class="row"><span>网络安全基础</span><span class="lvl-tag t-amber">了解</span></div><div class="track"><div class="fill f-amber" style="--w:40%"></div></div></div>
+    </div>
+
+    <div class="panel">
+      <h3>💻 编程开发</h3>
+      <div class="skill"><div class="row"><span>C++ 基础</span><span class="lvl-tag t-amber">了解</span></div><div class="track"><div class="fill f-amber" style="--w:50%"></div></div></div>
+      <div class="skill"><div class="row"><span>HTML / CSS / DW</span><span class="lvl-tag t-amber">了解</span></div><div class="track"><div class="fill f-amber" style="--w:55%"></div></div></div>
+      <div class="skill"><div class="row"><span>PyCharm / Python</span><span class="lvl-tag t-amber">学习中</span></div><div class="track"><div class="fill f-amber" style="--w:40%"></div></div></div>
+      <div class="skill"><div class="row"><span>Dreamweaver</span><span class="lvl-tag t-blue">掌握</span></div><div class="track"><div class="fill f-blue" style="--w:65%"></div></div></div>
+      <div class="skill"><div class="row"><span>JavaScript</span><span class="lvl-tag t-amber">学习中</span></div><div class="track"><div class="fill f-amber" style="--w:30%"></div></div></div>
+    </div>
+
+    <div class="panel">
+      <h3>🛠️ 工具与其他</h3>
+      <div class="skill"><div class="row"><span>Photoshop</span><span class="lvl-tag t-green">熟练</span></div><div class="track"><div class="fill f-green" style="--w:85%"></div></div></div>
+      <div class="skill"><div class="row"><span>Markdown / 写作</span><span class="lvl-tag t-blue">掌握</span></div><div class="track"><div class="fill f-blue" style="--w:75%"></div></div></div>
+      <div class="skill"><div class="row"><span>Git 版本控制</span><span class="lvl-tag t-amber">学习中</span></div><div class="track"><div class="fill f-amber" style="--w:35%"></div></div></div>
+      <div class="skill"><div class="row"><span>Navicat 数据库管理</span><span class="lvl-tag t-blue">掌握</span></div><div class="track"><div class="fill f-blue" style="--w:60%"></div></div></div>
+      <div class="skill"><div class="row"><span>MySQL 基础</span><span class="lvl-tag t-amber">了解</span></div><div class="track"><div class="fill f-amber" style="--w:45%"></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="section-title">
+    <h2>工具<em>图鉴</em></h2>
+    <p>一路陪我修炼的软件武器库</p>
+  </div>
+  <div class="gallery">
+    <figure class="g-card">
+      <img src="images/linux.png" alt="Linux">
+      <figcaption><b>Linux</b><span>服务器与运维的日常战场</span></figcaption>
+    </figure>
+    <figure class="g-card">
+      <img src="images/pycharm.png" alt="PyCharm">
+      <figcaption><b>PyCharm</b><span>Python 开发主力 IDE</span></figcaption>
+    </figure>
+    <figure class="g-card">
+      <img src="images/ps.png" alt="Photoshop">
+      <figcaption><b>Photoshop</b><span>图像处理与博客配图</span></figcaption>
+    </figure>
+    <figure class="g-card">
+      <img src="images/dw.png" alt="Dreamweaver">
+      <figcaption><b>Dreamweaver</b><span>网页制作的启蒙工具</span></figcaption>
+    </figure>
+    <figure class="g-card">
+      <img src="images/ensp.png" alt="eNSP">
+      <figcaption><b>华为 eNSP</b><span>路由交换实验模拟器</span></figcaption>
+    </figure>
+    <figure class="g-card">
+      <img src="images/navicat.png" alt="Navicat">
+      <figcaption><b>Navicat</b><span>数据库可视化管理利器</span></figcaption>
+    </figure>
+    <figure class="g-card">
+      <img src="images/cloud.png" alt="云计算">
+      <figcaption><b>云平台</b><span>主修方向 · 云上练兵场</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<style>
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;}
+.g-card{background:var(--card);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);transition:.3s;margin:0;}
+.g-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(30,64,175,.18);}
+.g-card img{width:100%;height:160px;object-fit:cover;display:block;transition:.4s;}
+.g-card:hover img{transform:scale(1.06);}
+.g-card figcaption{padding:16px 20px 20px;display:flex;flex-direction:column;gap:4px;}
+.g-card figcaption b{font-size:1.05rem;}
+.g-card figcaption span{color:var(--muted);font-size:.86rem;}
+</style>
+
+<div class="note">
+  💡 <b>说明：</b>技能等级按「熟练 / 掌握 / 了解」如实标注，不虚报。这条技能树会随学习进度持续更新——最新目标是点亮 <b>Docker 与 Kubernetes</b>，把云计算方向走深。
+</div>
+
+<footer>
+  <p>© 2026 云栈小筑 · 用 <span class="heart">♥</span> 和纯静态 HTML 打造</p>
+</footer>
+
+</body>
+</html>
